@@ -1,10 +1,13 @@
 /************* CONSTANTS *************/
 
-const name = "";
+const name = "Aaron Stack";
 
 /*************** MAIN ****************/
 window.addEventListener("load", function (event) {
-  const container = document.getElementsByClassName("zI5ZBcpf")[0];
+
+  const container = document.querySelectorAll('h3[role="presentation"]')[0]
+    .parentElement;
+
   if (!container) {
     return;
   }
