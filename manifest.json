@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Open Zoom Web",
+  "version": "0.1",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://*.zoom.us/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
