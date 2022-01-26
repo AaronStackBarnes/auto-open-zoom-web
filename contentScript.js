@@ -4,21 +4,26 @@ const name = "Aaron Stack";
 
 /*************** MAIN ****************/
 window.addEventListener("load", function (event) {
+  let launchButton = [...document.querySelectorAll('[role="button"]')].filter(
+    (b) => b?.innerText === "Launch Meeting"
+  )[0];
 
-  const container = document.querySelectorAll('h3[role="presentation"]')[0]
-    .parentElement;
-
-  if (!container) {
+  if (!launchButton) {
     return;
   }
 
-  const div = document.createElement("div");
-  div.innerHTML = `<a id="findMe" web_client="" tabindex="0">Join from Your Browser</a>`;
-  container.appendChild(div);
-  document.getElementById("findMe").click();
+  launchButton.click();
 
-  const nameInput = document.getElementById("inputname");
-  if (!nameInput.value && name) {
-    nameInput.value = name;
-  }
+  setTimeout(() => {
+    let webButton = [...document.querySelectorAll("a")].filter(
+      (b) => b?.innerText === "Join from Your Browser"
+    )[0];
+
+    webButton.click();
+
+    const nameInput = document.getElementById("inputname");
+    if (!nameInput.value && name) {
+      nameInput.value = name;
+    }
+  }, 5);
 });
